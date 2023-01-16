@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 export const formBtn = document.querySelector("#form-button");
 export const booksList = document.querySelector(".books-list");
-export let books = JSON.parse(localStorage.getItem("books")) || [];
+export const books = JSON.parse(localStorage.getItem("books")) || [];
 
 export class Book {
   constructor(id, title, author) {
@@ -23,7 +25,6 @@ export class Book {
   removeBook() {
     const { id } = this;
     books = books.filter((book) => {
-      console.log(books);
       if (book.id !== id) {
         return true;
       }
