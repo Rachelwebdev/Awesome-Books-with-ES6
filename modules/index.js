@@ -1,5 +1,12 @@
 import { Book, formBtn, booksList, books } from "./book.js";
 
+import { DateTime } from "./luxon/src/luxon.js";
+const clockElement = document.getElementById("clock");
+const clock = () => {
+  clockElement.textContent = DateTime.now().toISO();
+};
+setInterval(clock, 1000);
+
 const showBook = (id, title, author) => {
   const li = document.createElement("li");
   li.innerHTML = `<h2>"${title}"</h2>
